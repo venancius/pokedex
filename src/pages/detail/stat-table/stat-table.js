@@ -5,7 +5,7 @@ const StatTable = (props) => {
     let pokemon = props.data
 
     return (
-        <table>
+        <table className="statTable">
             <tbody>
                 <tr>
                     <td>Number</td>
@@ -24,41 +24,33 @@ const StatTable = (props) => {
                 <tr>
                     <td>Fast Attacks</td>
                     <td>
-                        <ul className="plainUl">
                         {pokemon.attacks.fast.map((element, index)=>(
-                        <li key={index}>{element.name} ( {element.type} ), {element.damage} damage</li>)
+                        <span key={index}> - {element.name} ( {element.type} ), {element.damage} damage<br></br></span>)
                         )}
-                        </ul>
                     </td>
                 </tr>
                 <tr>
                     <td>Special Attacks</td>
                     <td>
-                        <ul className="plainUl">
                         {pokemon.attacks.special.map((element, index)=>(
-                        <li key={index}>{element.name} ( {element.type} ), {element.damage} damage</li>)
+                        <span key={index}> - {element.name} ( {element.type} ), {element.damage} damage <br></br></span>)
                         )}
-                        </ul>
                     </td>
                 </tr>
                 <tr>
                     <td>Resistances</td>
                     <td>
-                        <ul className="plainUl">
                         {pokemon.resistant.map((element, index)=>(
-                        <li key={index}>{element}</li>)
+                        <span key={index}> - {element} <br></br></span>)
                         )}
-                        </ul>
                     </td>
                 </tr>
                 <tr>
                     <td>Weaknesses</td>
                     <td>
-                        <ul className="plainUl">
                         {pokemon.weaknesses.map((element, index)=>(
-                        <li key={index}>{element}</li>)
+                        <span key={index}> - {element}<br></br></span>)
                         )}
-                        </ul>
                     </td>
                 </tr>
                 <tr>

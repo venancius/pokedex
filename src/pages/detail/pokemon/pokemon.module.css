@@ -13,7 +13,7 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    margin: 24px;
+    margin: 24px auto;
     width: 280px;
 }
 
@@ -31,9 +31,6 @@
     color: black;
     font-size: 20px;
     padding: 16px 24px;
-}
-td {
-    padding: 0px 60px;
 }
 
 .pokemonEvolution {
@@ -53,10 +50,6 @@ td {
 
 .pokemonEvolution .pokemonName {
     font-size: 12px;
-}
-
-.plainUl {
-    padding: 0;
 }
 
 .detailContainer {

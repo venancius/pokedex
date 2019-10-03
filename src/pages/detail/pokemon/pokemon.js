@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import StatTable from './../stat-table'
 import Loading from './../../../components/loading'
 import styles from './pokemon.module.css'
-
+import NotFound from './../../../components/errors/not-found'
 
 const Pokemon = props =>{
     const { loading, error, data } = useQuery(query.pokemon,{
@@ -16,7 +16,7 @@ const Pokemon = props =>{
 
     if (loading) return <Loading isFull={true} />
     if (error) return `Error! ${error.message}`
-    if (!data.pokemon) return `Pokemon Not Found`
+    if (!data.pokemon) return <NotFound pokemon={props.name}/>
 
     return (
         <div className={styles.pokemonListContainer}>

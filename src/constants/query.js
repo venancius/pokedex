@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 const GET_POKEMONS = gql `
     query pokemons($first: Int!) {
         pokemons(first: $first) {
+            id,
             name,
             classification,
             image
@@ -13,6 +14,7 @@ const GET_POKEMONS = gql `
 const GET_POKEMON = gql `
 query pokemon($name: String!){
     pokemon(name: $name){
+      id,
       number,
     	name,
     	weight {
@@ -42,6 +44,7 @@ query pokemon($name: String!){
     fleeRate,
     maxCP,
     evolutions {
+      id,
       name,
       image
     },

@@ -2,6 +2,7 @@ import React from 'react'
 import icon from './../../images/icon.svg'
 import styles from './navbar.module.css'
 import { Link,withRouter } from 'react-router-dom'
+import pokemonConst from './../../constants/pokemon'
 
 const Navbar = props => {
 
@@ -15,26 +16,6 @@ const Navbar = props => {
                 search: '?filter='+e.target.value
             })
     }
-
-    let types = [
-        "Grass",
-        "Poison",
-        "Fire",
-        "Flying",
-        "Water",
-        "Bug",
-        "Normal",
-        "Electric",
-        "Ground",
-        "Fairy",
-        "Fighting",
-        "Psychic",
-        "Rock",
-        "Steel",
-        "Ice",
-        "Ghost",
-        "Dragon"
-    ]
 
     let route  = props.location.pathname
     let search = window.location.search
@@ -52,7 +33,7 @@ const Navbar = props => {
                 <div className={styles.selectContainer}>
                     <select className={styles.selectBox} onChange={typeOnChange} defaultValue={defaultValue}>
                         <option value="off">Filter by type..</option>
-                        {types.map((type,index)=>(
+                        {pokemonConst.types.map((type,index)=>(
                             <option key={index} value={type}>{type}</option>
                         ))}
                     </select>

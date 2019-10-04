@@ -21,10 +21,11 @@ Useful links / packages used in this app
 ## Installation
 
  - Clone this project
+ - Run npm install
  ```
  $ npm install
  ```
-
+ - Run npm start
  ```
  $ npm start
  ```

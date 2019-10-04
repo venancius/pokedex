@@ -1,13 +1,13 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import query from './../../../constants/query'
+import query from '../../../constants/query'
 import { Link } from 'react-router-dom'
 import InfiniteScroll from 'react-infinite-scroller'
-import Loading from './../../../components/loading'
-import styles from './pokemons.module.css'
+import Loading from '../../../components/loading'
+import styles from './pokemon-list.module.css'
 
-const Pokemons = props =>{
-    const { loading, error, data } = useQuery(query.pokemons,{
+const PokemonList= props =>{
+    const { loading, error, data } = useQuery(query.pokemonList,{
         variables : {
             first : props.showItem
         }
@@ -19,10 +19,14 @@ const Pokemons = props =>{
         if(!loading && props.showItem<=data.pokemons.length)
             props.onFetchRequest()
     }
-
+    
     if (!data && loading) return <Loading isFull={true} />
-    // if (error) return `Error! ${error.message}`;
-
+    let pokemonList = data.pokemons
+    if(props.filter!=='') {
+        pokemonList = pokemonList.filter(pokemon=>(
+            pokemon.types.join(",").toLowerCase().includes(props.filter.toLowerCase())
+        ))
+    }
     return (
         <InfiniteScroll
             pageStart={0}
@@ -30,7 +34,8 @@ const Pokemons = props =>{
             hasMore={true || false}
         >
         <div className={styles.pokemonListContainer}>
-            {data.pokemons.map(pokemon => (
+            {pokemonList
+                .map(pokemon => (
                 <Link
                     key={pokemon.id}
                     to={pokemon.name.toLowerCase()}
@@ -49,4 +54,4 @@ const Pokemons = props =>{
     );
 }
 
-export default Pokemons
+export default PokemonList

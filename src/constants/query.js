@@ -1,12 +1,12 @@
 import gql from "graphql-tag";
 
-const GET_POKEMONS = gql `
+const GET_POKEMON_LIST = gql `
     query pokemons($first: Int!) {
         pokemons(first: $first) {
             id,
             name,
-            classification,
-            image
+            image,
+            types
         }
     }
 `;
@@ -59,6 +59,6 @@ query pokemon($name: String!){
 `;
 
 export default {
-    pokemons : GET_POKEMONS,
-    pokemon  : GET_POKEMON
+    pokemonList : GET_POKEMON_LIST,
+    pokemon     : GET_POKEMON
 }

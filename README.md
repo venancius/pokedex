@@ -16,7 +16,7 @@ Useful links / packages used in this app
  - SPA with cache
  - Pokemon list with infinite scroll
  - Pokemon detail
- - Client-side filtering
+ - Filtering
 
 ## Installation
 

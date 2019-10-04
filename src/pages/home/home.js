@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
-import ApolloClient, { InMemoryCache } from 'apollo-boost'
+import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from '@apollo/react-hooks'
 import { Helmet } from 'react-helmet'
 import Pokemons from './pokemons'
 import config from './../../constants/config'
 
 const client = new ApolloClient({
-    uri : config.endpoint,
-    cache: new InMemoryCache(),
+    uri : config.endpoint
 });
 
 const Home = () => {

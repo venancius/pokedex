@@ -21,7 +21,7 @@ const Pokemons = props =>{
     }
 
     if (!data && loading) return <Loading isFull={true} />
-    if (error) return `Error! ${error.message}`;
+    // if (error) return `Error! ${error.message}`;
 
     return (
         <InfiniteScroll
@@ -43,6 +43,7 @@ const Pokemons = props =>{
             ))}
         </div>
         {loading && (<Loading isFull={false} />)}
+        {error && (`Error! ${error.message}`)}
     </InfiniteScroll>
        
     );

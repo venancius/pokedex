@@ -1,4 +1,4 @@
-## Pokédex Project
+## Pokédex Project ( with GraphQL )
 
 This project is inspired by this app https://pokedex.sokcoba.in, which create Pokédex app with GraphQL data source https://graphql-pokemon.now.sh
 
@@ -21,5 +21,10 @@ Useful links / packages used in this app
 ## Installation
 
  - Clone this project
- - npm install
- - npm start
+ ```
+ $ npm install
+ ```
+
+ ```
+ $ npm start
+ ```
